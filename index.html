@@ -4,10 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Animação com Bolhas</title>
-<link rel="stylesheet" href="./estilo.css">
+<link rel="icon" type="image/png" sizes="32x32" href="coracao-verde-32.png">
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
+<!-- Música de fundo -->
+<audio autoplay loop>
+  <source src="videoplayback.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+
+<!-- Logo -->
 <div class="logo-container">
     <div class="circulo"></div>
     <div class="quadrado"></div>
@@ -23,6 +31,33 @@
     <div class="vazio"></div>
 </div>
 
+<style>
+    button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #ff0000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10;
+      color: white;
+    }
+    </style>
+    <img src="gato1.jpg" class="gato gato-canto-esquerdo">
+<img src="gato1.jpg" class="gato gato-canto-direito">
+
+    </head>
+    <body>
+    
+    <button onclick="document.getElementById('musica').play()">Tocar Música</button>
+    <audio id="musica" loop>
+      <source src="videoplayback.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+    
 <!-- 20 Bolhas -->
 <div class="bubble" style="left:5%; top:10%; width:80px; height:80px; animation-duration:25s;"></div>
 <div class="bubble" style="left:15%; top:40%; width:60px; height:60px; animation-duration:20s;"></div>
@@ -49,6 +84,10 @@
 <div class="frase">
   <span>IFSP Birigui - SP | 1ª Informática | Eloa da Silva Cruz</span>
 </div>
+
+
+
+
 
 </body>
 </html>

@@ -94,3 +94,24 @@ body {
     75% { transform: translate(1px,1px); }
     100% { transform: translate(0,0); }
 }
+/* Estilo dos gatinhos */
+.gato {
+    position: absolute;
+    width: 300px; /* menor tamanho */
+    opacity: 0.8; 
+    animation: flutuar 3s infinite alternate, piscar 2s infinite;
+}
+
+/* Canto esquerdo */
+.gato-canto-esquerdo {
+    top: 0;
+    left: 0;
+    transform: rotate(-20deg);
+}
+
+/* Canto direito */
+.gato-canto-direito {
+    bottom: 0;
+    right: 0;
+    transform: rotate(20deg);
+}

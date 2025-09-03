@@ -1,117 +1,127 @@
+/* 🌄 Fundo Minecraft */
 body {
-    margin: 0;
-    height: 100vh;
-    background: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  background: url("minecraft-fundo.jpg") no-repeat center center fixed; /* Aqui você troca a imagem de fundo */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
 }
 
-/* Logo */
+/* 🏫 Logo IF */
 .logo-container {
-    display: grid;
-    grid-template-columns: repeat(3, 50px);
-    grid-template-rows: repeat(4, 50px);
-    gap: 10px;
-    animation: flutuar 8s infinite ease-in-out, cores 12s infinite;
-    z-index: 2;
-    position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-template-rows: repeat(4, 50px);
+  gap: 10px;
+  animation: balancar 3s infinite ease-in-out; /* Faz o logo balançar */
+  z-index: 2;
+  position: relative;
 }
 
-.quadrado { width: 50px; height: 50px; background: #6FBF4A; border-radius: 10px; }
-.circulo { width: 50px; height: 50px; background: #C81010; border-radius: 50%; }
-.vazio { width: 50px; height: 50px; }
-
-/* Animações do logo */
-@keyframes flutuar {
-    0%,100%{transform:translateY(0) rotate(0deg);}
-    25%{transform:translateY(-20px) rotate(5deg);}
-    50%{transform:translateY(0) rotate(0deg);}
-    75%{transform:translateY(20px) rotate(-5deg);}
+.quadrado {
+  width: 50px;
+  height: 50px;
+  background: #6FBF4A; /* Verde do IF */
+  border-radius: 10px;
 }
-@keyframes cores { 0%{filter:hue-rotate(0deg);} 50%{filter:hue-rotate(180deg);} 100%{filter:hue-rotate(360deg);} }
-
-/* Bolhas */
-.bubble {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(200,0,0,0.2);
-    box-shadow: 0 0 30px rgba(200,0,0,0.4);
-    animation: flutuarBolha linear infinite;
+ .mob-maca{
+  width: 50px;
+  height: 30px;
+  
+  background: #C81010; /* Vermelho do IF */
+  border-radius: 50%;
 }
-@keyframes flutuarBolha {
-    0%   { transform: translate(0, 0) scale(1); }
-    20%  { transform: translate(30px, -50px) scale(1.1); }
-    40%  { transform: translate(-40px, -100px) scale(0.9); }
-    60%  { transform: translate(50px, -150px) scale(1.05); }
-    80%  { transform: translate(-30px, -200px) scale(1); }
-    100% { transform: translate(0, -250px) scale(1); }
+.vazio {
+  width: 50px;
+  height: 50px;
 }
 
-/* Frase animada */
-.frase {
-    position: absolute;
-    top: 85%;
-    width: max-content;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #C81010;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .15em solid #C81010; /* cursor */
-    animation: digitar 5s steps(60, end) forwards, piscarCursor .75s step-end infinite;
+/* 🎥 Animação do logo */
+@keyframes balancar {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
 }
 
-/* Digitação */
-@keyframes digitar {
-    from { width: 0; }
-    to { width: 100%; }
+/* 🐾 Mobs base */
+.mob {
+  position: absolute;
+  width: 200px;
+  opacity: 0.9;
 }
 
-/* Piscar cursor */
-@keyframes piscarCursor {
-    0%,100% { border-color: transparent; }
-    50% { border-color: #C81010; }
+ .ovelha {
+   bottom: 1px;
+  left: 5%;
+  animation: pular 10s infinite;
+  animation: balancar 1s infinite;
 }
 
-/* Vibrar depois da digitação */
-.frase span {
-    display: inline-block;
-    animation: vibrar 1s infinite alternate;
-    animation-delay: 5s; /* espera terminar digitação */
+/* 🐄 Vaca pulando */
+.vaca {
+  bottom: 100px;
+  left: 15%;
+  animation: balancar 9s infinite ease-in-out;
+}
+@keyframes pular {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
 }
 
-@keyframes vibrar {
-    0% { transform: translate(0,0); }
-    25% { transform: translate(1px,-1px); }
-    50% { transform: translate(-1px,1px); }
-    75% { transform: translate(1px,1px); }
-    100% { transform: translate(0,0); }
-}
-/* Estilo dos gatinhos */
-.gato {
-    position: absolute;
-    width: 300px; /* menor tamanho */
-    opacity: 0.8; 
-    animation: flutuar 3s infinite alternate, piscar 2s infinite;
+/* 🐺 Lobo*/
+.lobo {
+ bottom: 0;
+  left: 40%; 
+    
+  animation: pular 1s infinite;
 }
 
-/* Canto esquerdo */
-.gato-canto-esquerdo {
-    top: 0;
-    left: 0;
-    transform: rotate(-20deg);
+/* 🧟‍♂️ Zumbi balançando */
+.zumbi {
+  bottom: 50px;
+  left: 80%;
+  animation: balancar 2s infinite;
 }
 
-/* Canto direito */
-.gato-canto-direito {
-    bottom: 0;
-    right: 0;
-    transform: rotate(20deg);
+/* 💣 Creeper tremendo */
+.creeper {
+  bottom: 15px;
+  right: 20%;
+  animation: tremer 0.2s infinite;
+}
+@keyframes tremer {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ⚠️ Texto engraçado de erro */
+.erro {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  animation: piscar 1s infinite alternate;
+}
+
+@keyframes piscar {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
+}
+.mob-maca {
+    bottom: 15px;
 }

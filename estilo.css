@@ -1,127 +1,179 @@
 /* 🌄 Fundo Minecraft */
 body {
-  margin: 0;
-  height: 100vh;
-  background: url("minecraft-fundo.jpg") no-repeat center center fixed; /* Aqui você troca a imagem de fundo */
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  font-family: "Arial", sans-serif;
+  margin: 0; /* remove margem padrão */
+  height: 100vh; /* altura da tela inteira */
+  background: url("minecraft-fundo.jpg") no-repeat center center fixed; /* fundo Minecraft */
+  background-size: cover; /* cobre toda a tela */
+  display: flex; /* flex para centralizar */
+  justify-content: center; /* centraliza horizontal */
+  align-items: center; /* centraliza vertical */
+  overflow: hidden; /* esconde overflow */
+  font-family: "Arial", sans-serif; /* fonte */
 }
 
 /* 🏫 Logo IF */
 .logo-container {
-  display: grid;
-  grid-template-columns: repeat(3, 50px);
-  grid-template-rows: repeat(4, 50px);
-  gap: 10px;
-  animation: balancar 3s infinite ease-in-out; /* Faz o logo balançar */
-  z-index: 2;
-  position: relative;
+  display: grid; /* organiza o logo em grid */
+  grid-template-columns: repeat(3, 50px); /* 3 colunas de 50px */
+  grid-template-rows: repeat(4, 50px); /* 4 linhas de 50px */
+  gap: 10px; /* espaço entre quadrados */
+  animation: balancar 3s infinite ease-in-out; /* animação de balançar */
+  z-index: 2; /* acima de elementos de fundo */
+  position: relative; /* relativo para posicionar a maçã */
 }
 
 .quadrado {
-  width: 50px;
-  height: 50px;
-  background: #6FBF4A; /* Verde do IF */
-  border-radius: 10px;
+  width: 50px; /* largura quadrado */
+  height: 50px; /* altura quadrado */
+  background: #6FBF4A; /* cor verde do IF */
+  border-radius: 10px; /* cantos arredondados */
 }
- .mob-maca{
-  width: 50px;
-  height: 30px;
-  
-  background: #C81010; /* Vermelho do IF */
-  border-radius: 50%;
+
+.mob-maca {
+  position: absolute; /* posicionamento relativo ao logo-container */
+  width: 100px; /* tamanho da maçã */
+  height: 100px; /* tamanho da maçã */
+  top: -30px; /* sobe acima do quadrado do “i” */
+  left: -25px; /* alinha à primeira coluna do grid */
+  z-index: 10; /* acima dos quadrados */
 }
+
 .vazio {
-  width: 50px;
-  height: 50px;
+  width: 50px; /* quadrado vazio largura */
+  height: 50px; /* quadrado vazio altura */
 }
 
 /* 🎥 Animação do logo */
 @keyframes balancar {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(3deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-3deg); }
-  100% { transform: rotate(0deg); }
+  0% { transform: rotate(0deg); } /* posição inicial */
+  25% { transform: rotate(3deg); } /* rotaciona 3° */
+  50% { transform: rotate(0deg); } /* volta ao centro */
+  75% { transform: rotate(-3deg); } /* rotaciona -3° */
+  100% { transform: rotate(0deg); } /* volta ao centro */
 }
 
 /* 🐾 Mobs base */
 .mob {
-  position: absolute;
-  width: 200px;
-  opacity: 0.9;
+  position: absolute; /* posicionamento absoluto */
+  width: 200px; /* largura base dos mobs */
+  opacity: 0.9; /* transparência */
 }
 
- .ovelha {
-   bottom: 1px;
-  left: 5%;
-  animation: pular 10s infinite;
-  animation: balancar 1s infinite;
+.ovelha {
+  bottom: 1px; /* posição no chão */
+  left: 5%; /* posição horizontal */
+  animation: pular 10s infinite; /* animação de pular */
+  animation: balancar 1s infinite; /* animação de balançar */
 }
 
 /* 🐄 Vaca pulando */
 .vaca {
-  bottom: 100px;
-  left: 15%;
-  animation: balancar 9s infinite ease-in-out;
-}
-@keyframes pular {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-40px); }
+  bottom: 100px; /* altura no chão */
+  left: 15%; /* posição horizontal */
+  animation: balancar 9s infinite ease-in-out; /* animação de balançar */
 }
 
-/* 🐺 Lobo*/
+@keyframes pular {
+  0%, 100% { transform: translateY(0); } /* posição normal */
+  50% { transform: translateY(-40px); } /* pulo */
+}
+
+/* 🐺 Lobo */
 .lobo {
- bottom: 0;
-  left: 40%; 
-    
-  animation: pular 1s infinite;
+  bottom: 0; /* no chão */
+  left: 40%; /* posição horizontal */
+  animation: pular 1s infinite; /* pular repetidamente */
 }
 
 /* 🧟‍♂️ Zumbi balançando */
 .zumbi {
-  bottom: 50px;
-  left: 80%;
-  animation: balancar 2s infinite;
+  bottom: 50px; /* altura no chão */
+  left: 80%; /* posição horizontal */
+  animation: balancar 2s infinite; /* balançar */
 }
 
 /* 💣 Creeper tremendo */
 .creeper {
-  bottom: 15px;
-  right: 20%;
-  animation: tremer 0.2s infinite;
-}
-@keyframes tremer {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-2px, 2px); }
-  50% { transform: translate(2px, -2px); }
-  75% { transform: translate(-2px, -2px); }
-  100% { transform: translate(0, 0); }
+  bottom: 15px; /* altura do chão */
+  right: 20%; /* posição horizontal */
+  animation: tremer 0.2s infinite; /* animação de tremer */
 }
 
-/* ⚠️ Texto engraçado de erro */
-.erro {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  background: rgba(0,0,0,0.6);
-  padding: 10px 20px;
-  border-radius: 10px;
-  animation: piscar 1s infinite alternate;
+@keyframes tremer {
+  0% { transform: translate(0, 0); } /* posição inicial */
+  25% { transform: translate(-2px, 2px); } /* desloca */
+  50% { transform: translate(2px, -2px); } /* desloca */
+  75% { transform: translate(-2px, -2px); } /* desloca */
+  100% { transform: translate(0, 0); } /* volta */
 }
 
 @keyframes piscar {
-  from { opacity: 1; }
-  to { opacity: 0.3; }
+  from { opacity: 1; } /* visível */
+  to { opacity: 0.3; } /* pisca */
 }
-.mob-maca {
-    bottom: 15px;
+
+.bote { 
+  position: absolute; /* posicionamento absoluto */
+  bottom: 150; /* altura no chão (faltou px) */
+  width: 200px; /* largura do bote */
+  right: -60px; /* posição horizontal */
 }
+
+.mob-container {
+  position: relative; /* repetido, ainda serve de referência */
+  width: 100%; /* largura total */
+  height: 400px; /* altura do chão */
+}
+.quadrado {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  animation: mudaCor 3s infinite alternate;
+}
+
+/* animação de cores */
+@keyframes mudaCor {
+  0%   { background: #000000; } /* verde IF */
+  25%  { background: #005109; } /* vermelho */
+  50%  { background: #6b94dc; } /* amarelo */
+  75%  { background: #ff0000; } /* azul */
+  100% { background: #ffffff; } /* volta ao verde */
+}
+.esqueleto {
+  position: absolute;      /* absoluto para mover na tela */
+  bottom: 0;               /* no chão */
+  left: 0;                 /* começa na esquerda */
+  width: 200px;            /* tamanho da imagem */
+  animation: andarVoltar 6s linear infinite alternate; /* vai e volta */
+}
+
+/* Animação: andar e pular */
+@keyframes andarVoltar {
+  0%   { left: 0; transform: scaleX(1); bottom: 0; }      /* início, olhando pra direita */
+  25%  { bottom: 40px; }                                   /* pulo leve */
+  50%  { bottom: 0; }                                      /* volta ao chão */
+  75%  { bottom: 40px; }                                   /* outro pulo */
+  100% { left: calc(100% - 100px); transform: scaleX(-1); bottom: 0; } /* fim, olhando pra esquerda */
+}
+/* Botão pequeno fixo no canto inferior direito */
+#play-btn {
+  position: fixed;       /* fica sempre na tela */
+  bottom: 20px;          /* distância do fundo */
+  right: 20px;           /* distância da direita */
+  width: 40px;           /* largura pequena */
+  height: 40px;          /* altura pequena */
+  border-radius: 50%;    /* deixa redondo */
+  border: none;          /* remove borda */
+  background: #6FBF4A;   /* verde Minecraft */
+  color: white;          /* cor do emoji */
+  font-size: 20px;       /* tamanho do emoji */
+  cursor: pointer;       /* muda o cursor ao passar */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* sombra leve */
+  z-index: 9999;         /* sempre acima de tudo */
+}
+
+#play-btn:hover {
+  background: #4a9a36;   /* cor ao passar o mouse */
+}
+
+

@@ -3,32 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IF no Minecraft</title>
+  <title>Minecraft</title>
+ <link rel="icon" type="image/png" href="img/minecraft.png">
+  <link rel="stylesheet" href="estilo.css">
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-  <!-- 🌟 Logo do IF -->
-  <div class="logo-container">
-    <div class=" "></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="vazio"></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="vazio"></div>
-  </div>
-a
+<div class="logo-container">
+  <div class="quadrado"></div> <!-- primeiro i -->
+  <div class="quadrado"></div>
+  <div class="quadrado"></div>
+  <div class="quadrado"></div>
+  <div class="quadrado"></div>
+  <div class="vazio"></div>
+  <div class="quadrado"></div>
+  <div class="quadrado"></div>
+  <div class="quadrado"></div>
+  <div class="quadrado"></div>
+  <div class="quadrado"></div>
+  <div class="vazio"></div>
+
+  <!-- 🍎 Maçã no pontinho do primeiro i -->
+  <img src="./img/maca.png" class="mob-maca">
+</div>
+
+
   <!-- 🐑 Animais/Mobs do Minecraft -->
   <img src="img/ovelha.png" class="mob ovelha"> <!-- Ovelha andando -->
   <img src="img/vaca.png" class="mob vaca">     <!-- Vaca pulando -->
   <img src="img/lobo.png" class="mob lobo">     <!-- Lobo correndo -->
   <img src="img/zumbi.png" class="mob zumbi">   <!-- Zumbi balançando -->
   <img src="img/creeper.png" class="mob creeper"> <!-- Creeper tremendo -->
-   <img src="./img/maca.png" class="mob maca"> <!-- logo maca -->
-  
+  <img src="img/bote.png" class="mob bote">       <!-- Bote-->
+  <img src="img/esqueleto.png" class="mob esqueleto"> <!-- Esqueleto -->
+  <!-- Botão fixo no canto para tocar música -->
+<button id="play-btn" onclick="document.getElementById('musica').play()">🎵</button>
+
+<!-- Música de fundo -->
+<audio id="musica" loop>
+  <source src="minecraft-skeleton-noise.mp3" type="audio/mpeg">
+</audio>

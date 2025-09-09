@@ -175,5 +175,36 @@ body {
 #play-btn:hover {
   background: #4a9a36;   /* cor ao passar o mouse */
 }
+.titulo {
+  position: fixed;       /* sempre visível */
+  top: 10px;             /* gruda no topo */
+  left: 0;
+  width: 100%;           /* ocupa a largura toda da tela */
+  text-align: center;    /* centraliza o texto */
+  
+  font-size: 80px;       /* bem grandão */
+  font-family: Arial, sans-serif;
+  color: darkgreen;
+  text-shadow: 4px 4px 0px black;
+  z-index: 9999;         /* fica por cima de tudo */
+  /* ✨ Animação para piscar */
+}
 
+.titulo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  font-family: 'Press Start 2P', monospace; /* estilo Minecraft */
+  font-size: 70px;
+  color: darkgreen;
+  text-shadow: 2px 2px black; /* contorno */
+  
+  animation: pisca 0.5s infinite alternate;
+}
 
+@keyframes pisca {
+  from { color: rgb(0, 109, 0); text-shadow: 2px 2px black; }
+  to   { color: rgb(24, 93, 24); text-shadow: 4px 4px 10px hsl(142, 100%, 50%); }
+}

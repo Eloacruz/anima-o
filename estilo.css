@@ -69,7 +69,7 @@ body {
 /* 🐄 Vaca pulando */
 .vaca {
   bottom: 100px; /* altura no chão */
-  left: 15%; /* posição horizontal */
+  left: 13%; /* esquerdaa */ 
   animation: balancar 9s infinite ease-in-out; /* animação de balançar */
 }
 
@@ -80,8 +80,8 @@ body {
 
 /* 🐺 Lobo */
 .lobo {
-  bottom: 0; /* no chão */
-  left: 40%; /* posição horizontal */
+  bottom: 110px; /* no chão */
+  left: 30%; /* posição horizontal */
   animation: pular 1s infinite; /* pular repetidamente */
 }
 
@@ -114,7 +114,7 @@ body {
 
 .bote { 
   position: absolute; /* posicionamento absoluto */
-  bottom: 150; /* altura no chão (faltou px) */
+  bottom: 150px; /* altura no chão (faltou px) */
   width: 200px; /* largura do bote */
   right: -60px; /* posição horizontal */
 }
@@ -125,17 +125,17 @@ body {
   height: 400px; /* altura do chão */
 }
 .quadrado {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  animation: mudaCor 3s infinite alternate;
+  width: 50px; /* largura */
+  height: 50px; /* altura */
+  border-radius: 10px;/* cantos arredondados */
+  animation: mudaCor 3s infinite alternate; /* animação de cores */
 }
 
 /* animação de cores */
 @keyframes mudaCor {
   0%   { background: #000000; } /* verde IF */
   25%  { background: #005109; } /* vermelho */
-  50%  { background: #6b94dc; } /* amarelo */
+  50%  { background: #40ff00; } /* amarelo */
   75%  { background: #ff0000; } /* azul */
   100% { background: #ffffff; } /* volta ao verde */
 }
@@ -145,6 +145,7 @@ body {
   left: 0;                 /* começa na esquerda */
   width: 200px;            /* tamanho da imagem */
   animation: andarVoltar 6s linear infinite alternate; /* vai e volta */
+  z-index: 10
 }
 
 /* Animação: andar e pular */
@@ -154,22 +155,6 @@ body {
   50%  { bottom: 0; }                                      /* volta ao chão */
   75%  { bottom: 40px; }                                   /* outro pulo */
   100% { left: calc(100% - 100px); transform: scaleX(-1); bottom: 0; } /* fim, olhando pra esquerda */
-}
-/* Botão pequeno fixo no canto inferior direito */
-#play-btn {
-  position: fixed;       /* fica sempre na tela */
-  bottom: 20px;          /* distância do fundo */
-  right: 20px;           /* distância da direita */
-  width: 40px;           /* largura pequena */
-  height: 40px;          /* altura pequena */
-  border-radius: 50%;    /* deixa redondo */
-  border: none;          /* remove borda */
-  background: #6FBF4A;   /* verde Minecraft */
-  color: white;          /* cor do emoji */
-  font-size: 20px;       /* tamanho do emoji */
-  cursor: pointer;       /* muda o cursor ao passar */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* sombra leve */
-  z-index: 9999;         /* sempre acima de tudo */
 }
 
 #play-btn:hover {
@@ -194,4 +179,17 @@ body {
 @keyframes pisca {
   from { color: rgb(0, 109, 0); text-shadow: 2px 2px black; }
   to   { color: rgb(24, 93, 24); text-shadow: 4px 4px 10px hsl(142, 100%, 50%); }
+}
+.vida {
+  position: absolute;      /* absoluto para mover na tela */
+  bottom: 300px;               /* no chão */                /* começa na esquerda */
+  width: 500px;            /* tamanho da imagem */
+  left: 30px;               /* esquerda */
+  top: 5px;
+}
+.barra {
+  position: absolute;      /* absoluto para mover na tela */
+  bottom: 300px;               /* no chão */                /* começa na esquerda */
+  width: 500px;   
+   bottom: 0%;
 }

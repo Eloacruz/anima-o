@@ -6,6 +6,7 @@
   <title>Minecraft</title>
  <link rel="icon" type="image/png" href="img/minecraft.png">
   <link rel="stylesheet" href="estilo.css">
+  
 </head>
 <body>
 
@@ -36,13 +37,39 @@
   <img src="img/creeper.png" class="mob creeper"> <!-- Creeper tremendo -->
   <img src="img/bote.png" class="mob bote">       <!-- Bote-->
   <img src="img/esqueleto.png" class="mob esqueleto"> <!-- Esqueleto -->
-  <!-- Botão fixo no canto para tocar música -->
-<button id="play-btn" onclick="document.getElementById('musica').play()">🎵</button>
+  <img src="img/vida.png" class="mob vida">       <!-- Vida -->
+  <img src="img/barra.png" class="mob barra">       <!-- Barra -->
 
-<!-- Música de fundo -->
-<audio id="musica" loop>
-  <source src="minecraft-skeleton-noise.mp3" type="audio/mpeg">
-</audio>
+
 <h1 class="titulo">IFCRAFT</h1>
+<!-------som vaca------->
+<audio id="som-vaca" src="vaca.mp3"></audio>
+<img src="img/vaca.png" class="mob vaca" onclick="document.getElementById('som-vaca').play()">
+
+<!-------som lobo------->
+<audio id="som-lobo" src="lobo.mp3"></audio>
+<img src="img/lobo.png" class="mob lobo" onclick="document.getElementById('som-lobo').play()">
+
+<!-------som creeper------->
+<audio id="som-creeper" src="creeper.mp3"></audio>
+<img src="img/creeper.png" class="mob creeper" onclick="document.getElementById('som-creeper').play()">
+
+<!-------som ovelha------->
+<audio id="som-ovelha" src="ovelha.mp3"></audio>
+<img src="img/ovelha.png" class="mob ovelha" onclick="document.getElementById('som-ovelha').play()">
+
+<!-------som zumbi------->
+<audio id="som-zumbi" src="zumbi.mp3"></audio>
+<img src="img/zumbi.png" class="mob zumbi" onclick="document.getElementById('som-zumbi').play()">
+
+<!-------som esqueleto------->
+<audio id="som-esqueleto" src="esqueleto.mp3"></audio>
+<img src="img/esqueleto.png" class="mob esqueleto" onclick="document.getElementById('som-esqueleto').play()">
+
+
+
+
+
+
 
 
